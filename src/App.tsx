@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.css"; // 确保引入 Bootstrap CSS
-import Headers from "./components/Headers";
+import Layout from "./Layout";
 
 function App() {
   return (
     <>
-      <Headers />
+      <Layout />
     </>
   );
 }

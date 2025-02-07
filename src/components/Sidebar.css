@@ -1,0 +1,35 @@
+/* PC 端固定 Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #343a40;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Sidebar 内部链接样式 */
+.sidebar .nav-link {
+  color: white;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.sidebar .nav-link:hover {
+  background: #495057;
+}
+
+/* 移动端 Sidebar（Offcanvas Bootstrap 控制） */
+@media (max-width: 991px) {
+  .sidebar {
+    display: none;
+  }
+}

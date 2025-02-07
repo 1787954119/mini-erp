@@ -1,0 +1,37 @@
+/* 整体布局 */
+.layout {
+  display: flex;
+}
+
+/* 右侧内容区域 */
+.main-content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+
+/* 顶部导航栏 */
+.top-navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  z-index: 1000;
+}
+
+/* 主要内容区域 */
+.content {
+  margin-top: 56px;
+  padding: 20px;
+}
+
+/* 移动端适配 */
+@media (max-width: 991px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  .top-navbar {
+    left: 0;
+  }
+}
