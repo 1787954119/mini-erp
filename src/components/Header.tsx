@@ -28,8 +28,8 @@ export default function Header({ onToggleSidebar }: HeaderProps) {
         <Navbar.Collapse id="basic-navbar-nav">
           {/* 用户登录相关选项右边对齐 */}
           <Nav className="ms-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="about">About</Nav.Link>
             <NavDropdown
               className="ms-auto"
               title="More"

@@ -12,11 +12,13 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "@tanstack/react-router": "^1.99.13",
+    "@tanstack/router-devtools": "^1.99.13",
+    "@tanstack/router-plugin": "^1.99.14",
     "bootstrap": "^5.3.3",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
-    "react-dom": "^19.0.0",
-    "react-router": "^7.1.5"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
