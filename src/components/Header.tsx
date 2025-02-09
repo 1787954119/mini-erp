@@ -1,4 +1,11 @@
-import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  NavDropdown,
+  Container,
+  Button,
+  NavLink,
+} from "react-bootstrap";
 
 interface HeaderProps {
   onToggleSidebar: () => void; // 控制移动端 Sidebar 显示
@@ -28,21 +35,16 @@ export default function Header({ onToggleSidebar }: HeaderProps) {
         <Navbar.Collapse id="basic-navbar-nav">
           {/* 用户登录相关选项右边对齐 */}
           <Nav className="ms-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="about">About</Nav.Link>
+            <NavLink href="/">Home</NavLink>
             <NavDropdown
               className="ms-auto"
-              title="More"
+              title="User-name"
               id="basic-nav-dropdown"
             >
-              <NavDropdown.Item href="#action/1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/2">
-                Another action
-              </NavDropdown.Item>
+              <NavDropdown.Item href="profile">Profile</NavDropdown.Item>
+              <NavDropdown.Item href="action2">Action2</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3">
-                Something else here
-              </NavDropdown.Item>
+              <NavDropdown.Item href="logout">Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

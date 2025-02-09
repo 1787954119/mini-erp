@@ -13,10 +13,10 @@ export default function Sidebar({ show, onClose }: SidebarProps) {
       <div className="sidebar d-none d-lg-block">
         <h2 className="sidebar-title">mini-erp</h2>
         <Nav className="flex-column">
-          <Nav.Link href="#dashboard">Dashboard</Nav.Link>
-          <Nav.Link href="#profile">Profile</Nav.Link>
-          <Nav.Link href="#settings">Settings</Nav.Link>
-          <Nav.Link href="#logout">Logout</Nav.Link>
+          <Nav.Link href="function1">Function1</Nav.Link>
+          <Nav.Link href="function2">Function2</Nav.Link>
+          <Nav.Link href="function3">Function3</Nav.Link>
+          <Nav.Link href="function4">Function4</Nav.Link>
         </Nav>
       </div>
 
@@ -27,17 +27,17 @@ export default function Sidebar({ show, onClose }: SidebarProps) {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column">
-            <Nav.Link href="#dashboard" onClick={onClose}>
-              Dashboard
+            <Nav.Link href="function1" onClick={onClose}>
+              Function1
             </Nav.Link>
-            <Nav.Link href="#profile" onClick={onClose}>
-              Profile
+            <Nav.Link href="function2" onClick={onClose}>
+              Function2
             </Nav.Link>
-            <Nav.Link href="#settings" onClick={onClose}>
-              Settings
+            <Nav.Link href="function3" onClick={onClose}>
+              Function3
             </Nav.Link>
-            <Nav.Link href="#logout" onClick={onClose}>
-              Logout
+            <Nav.Link href="function4" onClick={onClose}>
+              Function4
             </Nav.Link>
           </Nav>
         </Offcanvas.Body>

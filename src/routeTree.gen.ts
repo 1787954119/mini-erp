@@ -11,14 +11,42 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as AboutImport } from './routes/about'
+import { Route as ProfileImport } from './routes/profile'
+import { Route as Function4Import } from './routes/function4'
+import { Route as Function3Import } from './routes/function3'
+import { Route as Function2Import } from './routes/function2'
+import { Route as Function1Import } from './routes/function1'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
-const AboutRoute = AboutImport.update({
-  id: '/about',
-  path: '/about',
+const ProfileRoute = ProfileImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Function4Route = Function4Import.update({
+  id: '/function4',
+  path: '/function4',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Function3Route = Function3Import.update({
+  id: '/function3',
+  path: '/function3',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Function2Route = Function2Import.update({
+  id: '/function2',
+  path: '/function2',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Function1Route = Function1Import.update({
+  id: '/function1',
+  path: '/function1',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -39,11 +67,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutImport
+    '/function1': {
+      id: '/function1'
+      path: '/function1'
+      fullPath: '/function1'
+      preLoaderRoute: typeof Function1Import
+      parentRoute: typeof rootRoute
+    }
+    '/function2': {
+      id: '/function2'
+      path: '/function2'
+      fullPath: '/function2'
+      preLoaderRoute: typeof Function2Import
+      parentRoute: typeof rootRoute
+    }
+    '/function3': {
+      id: '/function3'
+      path: '/function3'
+      fullPath: '/function3'
+      preLoaderRoute: typeof Function3Import
+      parentRoute: typeof rootRoute
+    }
+    '/function4': {
+      id: '/function4'
+      path: '/function4'
+      fullPath: '/function4'
+      preLoaderRoute: typeof Function4Import
+      parentRoute: typeof rootRoute
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileImport
       parentRoute: typeof rootRoute
     }
   }
@@ -53,37 +109,76 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/function1': typeof Function1Route
+  '/function2': typeof Function2Route
+  '/function3': typeof Function3Route
+  '/function4': typeof Function4Route
+  '/profile': typeof ProfileRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/function1': typeof Function1Route
+  '/function2': typeof Function2Route
+  '/function3': typeof Function3Route
+  '/function4': typeof Function4Route
+  '/profile': typeof ProfileRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/function1': typeof Function1Route
+  '/function2': typeof Function2Route
+  '/function3': typeof Function3Route
+  '/function4': typeof Function4Route
+  '/profile': typeof ProfileRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths:
+    | '/'
+    | '/function1'
+    | '/function2'
+    | '/function3'
+    | '/function4'
+    | '/profile'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about'
+  to:
+    | '/'
+    | '/function1'
+    | '/function2'
+    | '/function3'
+    | '/function4'
+    | '/profile'
+  id:
+    | '__root__'
+    | '/'
+    | '/function1'
+    | '/function2'
+    | '/function3'
+    | '/function4'
+    | '/profile'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  Function1Route: typeof Function1Route
+  Function2Route: typeof Function2Route
+  Function3Route: typeof Function3Route
+  Function4Route: typeof Function4Route
+  ProfileRoute: typeof ProfileRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+  Function1Route: Function1Route,
+  Function2Route: Function2Route,
+  Function3Route: Function3Route,
+  Function4Route: Function4Route,
+  ProfileRoute: ProfileRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,14 +192,30 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about"
+        "/function1",
+        "/function2",
+        "/function3",
+        "/function4",
+        "/profile"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/about": {
-      "filePath": "about.tsx"
+    "/function1": {
+      "filePath": "function1.tsx"
+    },
+    "/function2": {
+      "filePath": "function2.tsx"
+    },
+    "/function3": {
+      "filePath": "function3.tsx"
+    },
+    "/function4": {
+      "filePath": "function4.tsx"
+    },
+    "/profile": {
+      "filePath": "profile.tsx"
     }
   }
 }
