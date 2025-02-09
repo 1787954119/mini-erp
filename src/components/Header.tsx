@@ -41,10 +41,10 @@ export default function Header({ onToggleSidebar }: HeaderProps) {
               title="User-name"
               id="basic-nav-dropdown"
             >
-              <NavDropdown.Item href="profile">Profile</NavDropdown.Item>
+              <NavDropdown.Item href="/user/profile">Profile</NavDropdown.Item>
               <NavDropdown.Item href="action2">Action2</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="logout">Logout</NavDropdown.Item>
+              <NavDropdown.Item href="/user/logout">Logout</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
