@@ -11,21 +11,15 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as ProfileImport } from './routes/profile'
 import { Route as LoginImport } from './routes/login'
 import { Route as Function4Import } from './routes/function4'
 import { Route as Function3Import } from './routes/function3'
 import { Route as Function2Import } from './routes/function2'
 import { Route as Function1Import } from './routes/function1'
 import { Route as IndexImport } from './routes/index'
+import { Route as UserProfileImport } from './routes/user/profile'
 
 // Create/Update Routes
-
-const ProfileRoute = ProfileImport.update({
-  id: '/profile',
-  path: '/profile',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const LoginRoute = LoginImport.update({
   id: '/login',
@@ -60,6 +54,12 @@ const Function1Route = Function1Import.update({
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const UserProfileRoute = UserProfileImport.update({
+  id: '/user/profile',
+  path: '/user/profile',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -109,11 +109,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
-    '/profile': {
-      id: '/profile'
-      path: '/profile'
-      fullPath: '/profile'
-      preLoaderRoute: typeof ProfileImport
+    '/user/profile': {
+      id: '/user/profile'
+      path: '/user/profile'
+      fullPath: '/user/profile'
+      preLoaderRoute: typeof UserProfileImport
       parentRoute: typeof rootRoute
     }
   }
@@ -128,7 +128,7 @@ export interface FileRoutesByFullPath {
   '/function3': typeof Function3Route
   '/function4': typeof Function4Route
   '/login': typeof LoginRoute
-  '/profile': typeof ProfileRoute
+  '/user/profile': typeof UserProfileRoute
 }
 
 export interface FileRoutesByTo {
@@ -138,7 +138,7 @@ export interface FileRoutesByTo {
   '/function3': typeof Function3Route
   '/function4': typeof Function4Route
   '/login': typeof LoginRoute
-  '/profile': typeof ProfileRoute
+  '/user/profile': typeof UserProfileRoute
 }
 
 export interface FileRoutesById {
@@ -149,7 +149,7 @@ export interface FileRoutesById {
   '/function3': typeof Function3Route
   '/function4': typeof Function4Route
   '/login': typeof LoginRoute
-  '/profile': typeof ProfileRoute
+  '/user/profile': typeof UserProfileRoute
 }
 
 export interface FileRouteTypes {
@@ -161,7 +161,7 @@ export interface FileRouteTypes {
     | '/function3'
     | '/function4'
     | '/login'
-    | '/profile'
+    | '/user/profile'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -170,7 +170,7 @@ export interface FileRouteTypes {
     | '/function3'
     | '/function4'
     | '/login'
-    | '/profile'
+    | '/user/profile'
   id:
     | '__root__'
     | '/'
@@ -179,7 +179,7 @@ export interface FileRouteTypes {
     | '/function3'
     | '/function4'
     | '/login'
-    | '/profile'
+    | '/user/profile'
   fileRoutesById: FileRoutesById
 }
 
@@ -190,7 +190,7 @@ export interface RootRouteChildren {
   Function3Route: typeof Function3Route
   Function4Route: typeof Function4Route
   LoginRoute: typeof LoginRoute
-  ProfileRoute: typeof ProfileRoute
+  UserProfileRoute: typeof UserProfileRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -200,7 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   Function3Route: Function3Route,
   Function4Route: Function4Route,
   LoginRoute: LoginRoute,
-  ProfileRoute: ProfileRoute,
+  UserProfileRoute: UserProfileRoute,
 }
 
 export const routeTree = rootRoute
@@ -219,7 +219,7 @@ export const routeTree = rootRoute
         "/function3",
         "/function4",
         "/login",
-        "/profile"
+        "/user/profile"
       ]
     },
     "/": {
@@ -240,8 +240,8 @@ export const routeTree = rootRoute
     "/login": {
       "filePath": "login.tsx"
     },
-    "/profile": {
-      "filePath": "profile.tsx"
+    "/user/profile": {
+      "filePath": "user/profile.tsx"
     }
   }
 }

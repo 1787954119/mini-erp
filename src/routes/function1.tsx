@@ -1,9 +1,14 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
+import Layout from "../Layout";
 
-export const Route = createFileRoute('/function1')({
+export const Route = createFileRoute("/function1")({
   component: RouteComponent,
-})
+});
 
 function RouteComponent() {
-  return <div>Hello "/function1"!</div>
+  return (
+    <>
+      <Layout Component={() => <div>Hello "/function1"!</div>} />
+    </>
+  );
 }
