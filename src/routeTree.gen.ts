@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as ProfileImport } from './routes/profile'
+import { Route as LoginImport } from './routes/login'
 import { Route as Function4Import } from './routes/function4'
 import { Route as Function3Import } from './routes/function3'
 import { Route as Function2Import } from './routes/function2'
@@ -23,6 +24,12 @@ import { Route as IndexImport } from './routes/index'
 const ProfileRoute = ProfileImport.update({
   id: '/profile',
   path: '/profile',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const LoginRoute = LoginImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -95,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Function4Import
       parentRoute: typeof rootRoute
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginImport
+      parentRoute: typeof rootRoute
+    }
     '/profile': {
       id: '/profile'
       path: '/profile'
@@ -113,6 +127,7 @@ export interface FileRoutesByFullPath {
   '/function2': typeof Function2Route
   '/function3': typeof Function3Route
   '/function4': typeof Function4Route
+  '/login': typeof LoginRoute
   '/profile': typeof ProfileRoute
 }
 
@@ -122,6 +137,7 @@ export interface FileRoutesByTo {
   '/function2': typeof Function2Route
   '/function3': typeof Function3Route
   '/function4': typeof Function4Route
+  '/login': typeof LoginRoute
   '/profile': typeof ProfileRoute
 }
 
@@ -132,6 +148,7 @@ export interface FileRoutesById {
   '/function2': typeof Function2Route
   '/function3': typeof Function3Route
   '/function4': typeof Function4Route
+  '/login': typeof LoginRoute
   '/profile': typeof ProfileRoute
 }
 
@@ -143,6 +160,7 @@ export interface FileRouteTypes {
     | '/function2'
     | '/function3'
     | '/function4'
+    | '/login'
     | '/profile'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -151,6 +169,7 @@ export interface FileRouteTypes {
     | '/function2'
     | '/function3'
     | '/function4'
+    | '/login'
     | '/profile'
   id:
     | '__root__'
@@ -159,6 +178,7 @@ export interface FileRouteTypes {
     | '/function2'
     | '/function3'
     | '/function4'
+    | '/login'
     | '/profile'
   fileRoutesById: FileRoutesById
 }
@@ -169,6 +189,7 @@ export interface RootRouteChildren {
   Function2Route: typeof Function2Route
   Function3Route: typeof Function3Route
   Function4Route: typeof Function4Route
+  LoginRoute: typeof LoginRoute
   ProfileRoute: typeof ProfileRoute
 }
 
@@ -178,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   Function2Route: Function2Route,
   Function3Route: Function3Route,
   Function4Route: Function4Route,
+  LoginRoute: LoginRoute,
   ProfileRoute: ProfileRoute,
 }
 
@@ -196,6 +218,7 @@ export const routeTree = rootRoute
         "/function2",
         "/function3",
         "/function4",
+        "/login",
         "/profile"
       ]
     },
@@ -213,6 +236,9 @@ export const routeTree = rootRoute
     },
     "/function4": {
       "filePath": "function4.tsx"
+    },
+    "/login": {
+      "filePath": "login.tsx"
     },
     "/profile": {
       "filePath": "profile.tsx"
